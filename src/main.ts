@@ -1,6 +1,13 @@
-import './assets/main.css'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import PrimeVue from "primevue/config";
+import Menubar from "primevue/menubar";
 
-import { createApp } from 'vue'
-import App from './App.vue'
+import "primeicons/primeicons.css"; // Иконки
 
-createApp(App).mount('#app')
+const app = createApp(App);
+app.use(router);
+app.use(PrimeVue);
+app.component("Menubar", Menubar);
+app.mount("#app");

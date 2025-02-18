@@ -16,3 +16,9 @@ export default defineComponent({
     <UserList />
   </div>
 </template>
+
+<style lang="scss" scoped>
+.wrapper {
+  
+}
+</style>

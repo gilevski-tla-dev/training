@@ -1,6 +1,20 @@
-import './assets/main.css'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import PrimeVue, { defaultOptions } from "primevue/config";
+import Menubar from "primevue/menubar";
 
-import { createApp } from 'vue'
-import App from './App.vue'
+import "./assets/main.scss";
+import "primeicons/primeicons.css";
+import "./assets/theme.css";
 
-createApp(App).mount('#app')
+const app = createApp(App);
+app.use(router);
+app.use(PrimeVue, {
+  ripple: true,
+  locale: {
+    ...defaultOptions,
+  },
+});
+app.component("Menubar", Menubar);
+app.mount("#app");

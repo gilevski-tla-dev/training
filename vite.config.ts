@@ -13,4 +13,9 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  server: {
+    proxy: {
+      "/api": "http://241.lnsk.infra.innoseti.ru:9001",
+    },
+  },
 });

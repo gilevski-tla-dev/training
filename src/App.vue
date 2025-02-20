@@ -9,9 +9,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div id="app">
-    <Default> <router-view /> </Default>
-  </div>
+  <Default> <router-view /> </Default>
 </template>
 
 <style></style>

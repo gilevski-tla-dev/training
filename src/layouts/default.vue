@@ -19,4 +19,4 @@ export default defineComponent({
   </component>
 </template>
 
-
+<style scoped></style>

@@ -37,10 +37,32 @@ export default defineComponent({
   },
 });
 </script>
-<template>
-  <Menubar :model="menuItems" />
 
-  <div>
-    <slot />
+<template>
+  <div class="app_layout">
+    <div class="content">
+      <Menubar :model="menuItems" />
+
+      <div>
+        <slot />
+      </div>
+    </div>
   </div>
 </template>
+
+<style scoped>
+.app_layout {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 1440px;
+  height: 100%;
+}
+</style>

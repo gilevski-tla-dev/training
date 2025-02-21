@@ -2,6 +2,7 @@
 import { defineComponent } from "vue";
 import DocumentsList from "@/components/DocumentsList.vue";
 import { getDocuments } from "@/services/api/getDocuments";
+import { getDocumentByID } from "@/services/api/getDocumentById";
 
 export default defineComponent({
   name: "HomePage",
@@ -11,6 +12,15 @@ export default defineComponent({
   async mounted() {
     try {
       const data = await getDocuments(); // Запрашиваем данные
+      console.log("Данные из getDocuments():", data); // Выводим в консоль
+    } catch (error) {
+      console.error("Ошибка при запросе данных:", error);
+    }
+
+    try {
+      const data = await getDocumentByID(
+        "68c1712d-479b-4626-94b3-aa131bd4404d"
+      ); // Запрашиваем данные
       console.log("Данные из getDocuments():", data); // Выводим в консоль
     } catch (error) {
       console.error("Ошибка при запросе данных:", error);
